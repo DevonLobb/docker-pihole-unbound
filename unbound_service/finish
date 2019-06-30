@@ -1,0 +1,4 @@
+#!/usr/bin/with-contenv bash
+
+s6-echo "Stopping unbound"
+kill -9 $(pgrep unbound)
