@@ -3,7 +3,7 @@ FROM pihole/pihole:latest
 
 RUN \
 	apt-get update && \
-	apt-get install unbound -y && \
+	apt-get install unbound wget -y && \
 	rm -rf /var/lib/apt/lists/* && \
 	wget -O /var/lib/unbound/root.hints https://www.internic.net/domain/named.root && \
 	cp /usr/share/dns/root.key /var/lib/unbound/
