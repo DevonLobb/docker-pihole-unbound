@@ -39,6 +39,6 @@ docker create \
 --net=host \
 --restart=unless-stopped \
 --hostname=pi.hole \
-devonkupiec/pihole-unbound:latest
+ghcr.io/devonkupiec/docker-pihole-unbound:master
 
 ```
