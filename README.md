@@ -7,7 +7,7 @@ Enable in Pi-hole by setting custom DNS server to 127.0.0.1#5353
 
 Check if unbound is running: 
 ```sh
-docker exec pihole s6-svstat /var/run/s6/services/unbound
+docker exec pihole /command/s6-svstat /run/s6-rc/servicedirs/unbound
 ```
 
 

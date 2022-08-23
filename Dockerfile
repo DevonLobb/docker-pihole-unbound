@@ -9,5 +9,5 @@ RUN \
 	cp /usr/share/dns/root.key /var/lib/unbound/ && \
 	mkdir /var/log/unbound && touch /var/log/unbound/unbound.log && chown -R unbound:unbound /var/log/unbound
 
-ADD	unbound_service/* /etc/services.d/unbound/
+ADD	debian-root/ /
 COPY	unbound_default_config/* /etc/unbound/unbound.conf.d/
