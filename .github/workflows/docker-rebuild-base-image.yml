@@ -1,0 +1,27 @@
+name: Check docker image
+
+on:
+  schedule:
+    - cron:  '0 4 * * *'
+
+jobs:
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+
+      - name: Check if update available
+        id: check
+        uses: lucacome/docker-image-update-checker@v1
+        with:
+          base-image: pihole/pihole:latest
+          image: DevonLobb/docker-pihole-unbound:latest
+
+      - name: Build and push
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: true
+          tags: DevonLobb/docker-pihole-unbound:latest
+        if: steps.check.outputs.needs-updating == 'true'
