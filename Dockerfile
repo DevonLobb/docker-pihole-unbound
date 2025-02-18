@@ -1,5 +1,7 @@
 FROM pihole/pihole:latest
 
+LABEL pihole_version="v6"
+
 RUN \
 	apk update && \
 	apk add unbound -f && \
