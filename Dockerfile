@@ -1,5 +1,6 @@
-FROM pihole/pihole:latest
+FROM pihole/pihole:2024.07.0
 
+LABEL pihole_version="v5.x"
 
 RUN \
 	apt-get update && \
