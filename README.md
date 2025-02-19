@@ -5,9 +5,9 @@ Pi-hole container using the recursive DNS server unbound.
 
 Enable in Pi-hole by setting custom DNS server to 127.0.0.1#5353
 
-Check if unbound is running: 
+Check if unbound is working: 
 ```sh
-docker exec pihole /command/s6-svstat /run/s6-rc/servicedirs/unbound
+docker exec pihole dig google.com @127.0.0.1 -p 5353
 ```
 
 
